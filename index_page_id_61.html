@@ -36,13 +36,22 @@
 
 /* ── 비전 인트로 ── */
 .about-vision {
-  background: linear-gradient(135deg, #052e16 0%, #166534 60%, #15803d 100%);
+  background-image:
+    linear-gradient(to left, rgba(106, 107, 107, 0.5) 0%, rgba(246, 249, 249, 0.95) 100%),
+    url('/images/office.png');
+  background-size: 150% auto;
+  background-position: 0% center;
   border-radius: 16px;
   padding: 40px 48px;
-  color: #fff;
+  color: #000;
   margin-bottom: 64px;
   position: relative;
   overflow: hidden;
+  animation: panImage 12s linear infinite alternate;
+}
+@keyframes panImage {
+  from { background-position: 0% center; }
+  to   { background-position: 100% center; }
 }
 .about-vision::before {
   content: '"';
