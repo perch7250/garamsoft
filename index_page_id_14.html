@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>교육과정 수강신청 | 가람소프트</title>
+<link rel="icon" type="image/jpeg" href="./images/아젠다.jpg"/>
+<link rel="stylesheet" href="./modern-style.css"/>
+<style>
+.sc-system { max-width: 960px; margin: 0 auto; padding: 52px 28px 80px; }
+.sc-title { display: flex; align-items: center; gap: 14px; margin-bottom: 52px; }
+.sc-title-icon {
+  width: 50px; height: 50px;
+  background: linear-gradient(135deg,#0ea5e9,#0369a1);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.sc-title-icon svg { width: 26px; height: 26px; fill: #fff; }
+.sc-title h2 { font-size: 22px; font-weight: 800; color: #0f172a; letter-spacing: -0.3px; }
+.hex-container { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-bottom: 60px; }
+.hex-row { display: flex; gap: 6px; }
+.hex-row:nth-child(2) { margin-left: 63px; }
+.hex {
+  width: 116px; height: 100px;
+  clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; font-size: 13px; font-weight: 600; color: #1e293b;
+  cursor: pointer; transition: filter .2s, transform .2s; line-height: 1.4; padding: 0 10px;
+}
+.hex:hover { filter: brightness(.93); transform: scale(1.05); }
+.hex.c1{background:#bae6fd} .hex.c2{background:#bbf7d0} .hex.c3{background:#fed7aa}
+.hex.c4{background:#fef08a} .hex.c5{background:#a5f3fc} .hex.c6{background:#e9d5ff}
+.sc-section { margin-bottom: 48px; }
+.sc-section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.sc-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.sc-section-header h3 { font-size: 18px; font-weight: 700; color: #0f172a; }
+.sc-steps-flow { display: flex; align-items: center; overflow-x: auto; }
+.sc-step {
+  flex: 1; min-width: 170px; background: #fff;
+  border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.sc-step-label {
+  font-size: 10px; font-weight: 700; letter-spacing: .07em;
+  color: #0369a1; background: #e0f2fe;
+  display: inline-block; padding: 2px 8px; border-radius: 4px; margin-bottom: 10px;
+}
+.sc-step p { font-size: 13px; color: #475569; line-height: 1.65; }
+.sc-arrow { flex-shrink: 0; width: 30px; display: flex; align-items: center; justify-content: center; color: #cbd5e1; }
+.sc-arrow svg { width: 18px; height: 18px; }
+@media (max-width: 640px) {
+  .sc-steps-flow { flex-direction: column; align-items: stretch; }
+  .sc-arrow { transform: rotate(90deg); }
+  .hex { width: 88px; height: 76px; font-size: 11px; }
+  .hex-row:nth-child(2) { margin-left: 47px; }
+}
+</style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main id="gs-main">
+  <div class="gs-page-hero">
+    <div class="gs-page-hero-inner">
+      <div class="sc-title-banner">
+        <div class="gs-hero-overlay"></div>
+        <div class="gs-hero-text">
+          <span class="tag">EDUCATION SOFTWARE</span>
+          <h1>교육의 미래를<br/>가람소프트가 만듭니다</h1>
+          <p>교육용 프로그램 개발 전문기업</p>
+        </div>
+      </div>
+      <div class="gs-page-hero-content">
+        <h1>교육과정 수강신청</h1>
+        <p>체계적인 교육과정을 통해 소프트웨어 역량을 키워보세요</p>
+        <div class="gs-breadcrumb">
+          <a href="./index.html">홈</a><span>›</span><span>교육과정 수강신청</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc-system">
+    <div class="sc-title">
+      <div class="sc-title-icon">
+        <svg viewBox="0 0 20 20"><path fill="#fff" d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+      </div>
+      <h2>교육과정 수강신청 시스템</h2>
+    </div>
+
+    <div class="hex-container">
+      <div class="hex-row">
+        <div class="hex c1">학생<br/>수강신청</div>
+        <div class="hex c5">미수강<br/>관리</div>
+        <div class="hex c3">신반<br/>배정</div>
+      </div>
+      <div class="hex-row">
+        <div class="hex c2">수강신청<br/>실시간통계</div>
+        <div class="hex c4">반별수강<br/>신청현황</div>
+        <div class="hex c6">교과서<br/>신청</div>
+      </div>
+    </div>
+
+    <div class="sc-section">
+      <div class="sc-section-header"><div class="sc-dot" style="background:#f59e0b"></div><h3>학생수강신청</h3></div>
+      <div class="sc-steps-flow">
+        <div class="sc-step"><div class="sc-step-label">STEP 1</div><p>수강신청 사이트(http://www.schm.co.kr)에 접속하여 수강신청을 한다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STEP 2</div><p>수강신청과 동시에 교과서 신청까지 이루어진다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STEP 3</div><p>수강신청이 완료된다. 관리자는 수강신청 통계를 확인할 수 있다.</p></div>
+      </div>
+    </div>
+
+    <div class="sc-section">
+      <div class="sc-section-header"><div class="sc-dot" style="background:#84cc16"></div><h3>수강신청 실시간통계</h3></div>
+      <div class="sc-steps-flow">
+        <div class="sc-step"><div class="sc-step-label">STATE 1</div><p>과정별로 선택현황을 확인할 수 있다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STATE 2</div><p>선택조합별 수강신청 현황을 확인할 수 있다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STATE 3</div><p>현재 미수강하고 있는 학생을 확인할 수 있다.</p></div>
+      </div>
+    </div>
+
+    <div class="sc-section">
+      <div class="sc-section-header"><div class="sc-dot" style="background:#22c55e"></div><h3>반별 수강신청 실시간 현황</h3></div>
+      <div class="sc-steps-flow">
+        <div class="sc-step"><div class="sc-step-label">STATE 1</div><p>반별로 수강신청 현황을 실시간으로 확인 한다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STATE 2</div><p>담임 선생님이 해당 반의 신청현황을 실시간으로 확인 한다.</p></div>
+      </div>
+    </div>
+
+    <div class="sc-section">
+      <div class="sc-section-header"><div class="sc-dot" style="background:#3b82f6"></div><h3>교과서 신청</h3></div>
+      <div class="sc-steps-flow">
+        <div class="sc-step"><div class="sc-step-label">STATE 1</div><p>수강신청과 동시에 교과서 신청도 자동으로 이루어지며 별도로도 신청받을 수 있다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STATE 2</div><p>교과서 금액관리를 통해서 개인별로 금액을 집계할 수 있으며 행정업무와 연계시킨다.</p></div>
+      </div>
+    </div>
+
+    <div class="sc-section">
+      <div class="sc-section-header"><div class="sc-dot" style="background:#f97316"></div><h3>신반배정</h3></div>
+      <div class="sc-steps-flow">
+        <div class="sc-step"><div class="sc-step-label">STEP 1</div><p>수강신청한 결과의 조합과 성적, 성별로 반을 편성할 수 있다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STEP 2</div><p>신반 번호 부여를 한다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STEP 3</div><p>학년 말에 자동으로 진급처리한다.</p></div>
+      </div>
+    </div>
+
+    <div class="sc-section">
+      <div class="sc-section-header"><div class="sc-dot" style="background:#a855f7"></div><h3>미수강자 관리</h3></div>
+      <div class="sc-steps-flow">
+        <div class="sc-step"><div class="sc-step-label">STEP 1</div><p>미수강자를 확인한다.</p></div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step"><div class="sc-step-label">STEP 2</div><p>관리자나 선생님이 대신 수강신청을 할 수 있다.</p></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="./common.js"></script>
+</body>
+</html>

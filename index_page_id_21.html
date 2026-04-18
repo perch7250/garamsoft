@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>연수지원명부 | 가람소프트</title>
+<link rel="icon" type="image/jpeg" href="./images/아젠다.jpg"/>
+<link rel="stylesheet" href="./modern-style.css"/>
+<style>
+.sc-system {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+.sc-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+.sc-title-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #166534, #14532d);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sc-title-icon svg { width: 28px; height: 28px; fill: #fff; }
+.sc-title h2 { font-size: 24px; font-weight: 700; color: #1a202c; }
+
+/* 3개 육각형 가로 배열 */
+.hex-container-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 64px;
+}
+.hex {
+  width: 130px;
+  height: 112px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.2s;
+  line-height: 1.4;
+  padding: 0 12px;
+}
+.hex:hover { filter: brightness(0.93); transform: scale(1.04); }
+.hex.color-green { background: #b5d9b0; }
+.hex.color-blue  { background: #b3dff0; }
+.hex.color-peach { background: #f5c8a0; }
+
+.sc-section { margin-bottom: 52px; }
+.sc-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.sc-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sc-dot.green { background: #166534; }
+.sc-dot.blue  { background: #2563eb; }
+
+.sc-section-header h3 { font-size: 20px; font-weight: 700; color: #1a202c; }
+
+.sc-steps-flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.sc-step {
+  flex: 1;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 18px 18px 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.sc-step-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #166534;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 10px;
+  background: #dcfce7;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.sc-step p { font-size: 13px; color: #4a5568; line-height: 1.65; }
+.sc-arrow {
+  flex-shrink: 0;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0aec0;
+}
+.sc-arrow svg { width: 20px; height: 20px; }
+
+@media (max-width: 640px) {
+  .sc-steps-flow { flex-direction: column; align-items: stretch; }
+  .sc-arrow { transform: rotate(90deg); }
+  .hex { width: 96px; height: 84px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+<main id="gs-main">
+  <div class="gs-page-hero">
+    <div class="gs-page-hero-inner">
+      <div class="sc-title-banner">
+        <div class="gs-hero-overlay"></div>
+        <div class="gs-hero-text">
+          <span class="tag">EDUCATION SOFTWARE</span>
+          <h1>교육의 미래를<br/>가람소프트가 만듭니다</h1>
+          <p>교육용 프로그램 개발 전문기업</p>
+        </div>
+      </div>
+      <div class="gs-page-hero-content">
+        <h1>연수지원명부</h1>
+        <p>교원 연수 지원 명부를 확인하세요</p>
+        <div class="gs-breadcrumb">
+          <a href="./index.html">홈</a><span>›</span><span>연수지원명부</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc-system">
+
+    <div class="sc-title">
+      <div class="sc-title-icon">
+        <svg viewBox="0 0 20 20"><path fill="#fff" d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9zM4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"/></svg>
+      </div>
+      <h2>연수지원명부</h2>
+    </div>
+
+    <!-- 육각형 메뉴 (3개 가로) -->
+    <div class="hex-container-row">
+      <div class="hex color-green">지원명부<br/>작성</div>
+      <div class="hex color-blue">관리자<br/>결재</div>
+      <div class="hex color-peach">통계</div>
+    </div>
+
+    <!-- ① 지원명부 작성 -->
+    <div class="sc-section">
+      <div class="sc-section-header">
+        <div class="sc-dot green"></div>
+        <h3>지원명부 작성</h3>
+      </div>
+      <div class="sc-steps-flow">
+        <div class="sc-step">
+          <div class="sc-step-label">Step 1</div>
+          <p>사이트에 로그인해서 지원명부를 작성합니다.</p>
+        </div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step">
+          <div class="sc-step-label">Step 2</div>
+          <p>지원과 동시에 자동으로 고유 순번이 증가됩니다.</p>
+        </div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step">
+          <div class="sc-step-label">Step 3</div>
+          <p>부장님의 결재를 기다립니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 관리자 결재 -->
+    <div class="sc-section">
+      <div class="sc-section-header">
+        <div class="sc-dot blue"></div>
+        <h3>관리자 결재</h3>
+      </div>
+      <div class="sc-steps-flow">
+        <div class="sc-step">
+          <div class="sc-step-label">Step 1</div>
+          <p>연수 지원대기자를 확인합니다.</p>
+        </div>
+        <div class="sc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="sc-step">
+          <div class="sc-step-label">Step 2</div>
+          <p>결재를 합니다.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="./common.js"></script>
+</body>
+</html>

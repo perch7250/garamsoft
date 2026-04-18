@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>회사소개 | 가람소프트</title>
+<link rel="icon" type="image/jpeg" href="./images/아젠다.jpg"/>
+<link rel="stylesheet" href="./modern-style.css"/>
+<style>
+/* ── 회사소개 전용 스타일 ── */
+
+.about-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* 섹션 타이틀 */
+.about-section-title {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.about-section-title h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a202c;
+  letter-spacing: -0.5px;
+}
+.about-section-title .divider {
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, #166534, #15803d);
+  border-radius: 2px;
+  margin: 14px auto 0;
+}
+
+/* ── 비전 인트로 ── */
+.about-vision {
+  background: linear-gradient(135deg, #052e16 0%, #166534 60%, #15803d 100%);
+  border-radius: 16px;
+  padding: 40px 48px;
+  color: #fff;
+  margin-bottom: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.about-vision::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 24px;
+  font-size: 160px;
+  font-family: Georgia, serif;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+}
+.about-vision p {
+  font-size: 17px;
+  line-height: 1.85;
+  position: relative;
+  z-index: 1;
+}
+.about-vision p + p {
+  margin-top: 16px;
+}
+
+/* ── 사업분야 ── */
+.biz-section {
+  margin-bottom: 64px;
+}
+
+.biz-section-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #166534;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.biz-section h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 32px;
+}
+
+.biz-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.biz-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.biz-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(22,101,52,.15);
+  border-color: #166534;
+}
+
+.biz-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.biz-card-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.biz-card.school  .biz-card-icon { background: #dbeafe; }
+.biz-card.school  .biz-card-icon svg { fill: #2563eb; }
+.biz-card.ecommerce .biz-card-icon { background: #fce7f3; }
+.biz-card.ecommerce .biz-card-icon svg { fill: #db2777; }
+.biz-card.education .biz-card-icon { background: #dcfce7; }
+.biz-card.education .biz-card-icon svg { fill: #16a34a; }
+.biz-card.si       .biz-card-icon { background: #fef9c3; }
+.biz-card.si       .biz-card-icon svg { fill: #ca8a04; }
+
+.biz-card-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 8px;
+}
+.biz-card-desc {
+  font-size: 13px;
+  color: #718096;
+  line-height: 1.6;
+}
+
+/* ── 회사 메시지 ── */
+.about-messages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 64px;
+}
+
+.about-msg-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+
+.about-msg-card .msg-num {
+  font-size: 36px;
+  font-weight: 800;
+  color: #dcfce7;
+  line-height: 1;
+  margin-bottom: 12px;
+  font-family: Georgia, serif;
+}
+
+.about-msg-card p {
+  font-size: 14px;
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+/* ── 회사 정보 테이블 ── */
+.about-info-section h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 24px;
+}
+
+.about-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,.07);
+}
+
+.about-info-table tr {
+  border-bottom: 1px solid #edf2f7;
+}
+.about-info-table tr:last-child { border-bottom: none; }
+
+.about-info-table th {
+  width: 140px;
+  padding: 16px 20px;
+  background: #f7fafc;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.about-info-table td {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #2d3748;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .biz-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-messages { grid-template-columns: 1fr; }
+  .about-vision { padding: 28px 24px; }
+  .about-vision p { font-size: 15px; }
+}
+@media (max-width: 480px) {
+  .biz-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-info-table th { width: 100px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div id="header-placeholder"></div>
+<!-- ── MAIN ── -->
+<main id="gs-main">
+
+  <div class="gs-page-hero">
+    <div class="gs-page-hero-inner">
+      <div class="sc-title-banner">
+        <div class="gs-hero-overlay"></div>
+        <div class="gs-hero-text">
+          <span class="tag">EDUCATION SOFTWARE</span>
+          <h1>교육의 미래를<br/>가람소프트가 만듭니다</h1>
+          <p>교육용 프로그램 개발 전문기업</p>
+        </div>
+      </div>
+      <div class="gs-page-hero-content">
+        <h1>회사소개</h1>
+        <p>교육용 프로그램 개발 전문기업 가람소프트를 소개합니다</p>
+        <div class="gs-breadcrumb">
+          <a href="./index.html">홈</a><span>›</span><span>회사소개</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-wrap">
+
+    <!-- 섹션 타이틀 -->
+    <div class="about-section-title">
+      <h2>가람소프트 소개</h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- 비전 인트로 -->
+    <div class="about-vision">
+      <p>가람소프트는 발전적인 사고로 사회에 기여한다는 비전을 가지고 있습니다.</p>
+      <p>인간에 대한 신뢰, 자연에 대한 사랑을 바탕으로 풍요로운 미래를 열어가고 있습니다.<br/>
+      굴힐 줄 모르는 창조정신과 끊임 없는 도전정신을 바탕으로 일류 기업으로 성장하겠습니다.</p>
+    </div>
+
+    <!-- 사업분야 -->
+    <div class="biz-section">
+      <div class="biz-section-label">Business Fields</div>
+      <h3>사업분야</h3>
+      <div class="biz-grid">
+
+        <!-- 학교시스템 -->
+        <div class="biz-card school">
+          <div class="biz-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+            </svg>
+          </div>
+          <div class="biz-card-name">학교시스템</div>
+          <div class="biz-card-desc">교육기관을 위한 맞춤형 학사관리 시스템 개발</div>
+        </div>
+
+        <!-- 전자상거래 -->
+        <div class="biz-card ecommerce">
+          <div class="biz-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.1 17 7 17h14v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+          </div>
+          <div class="biz-card-name">전자상거래</div>
+          <div class="biz-card-desc">온라인 쇼핑몰 및 전자상거래 플랫폼 구축</div>
+        </div>
+
+        <!-- 교육사업 -->
+        <div class="biz-card education">
+          <div class="biz-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+            </svg>
+          </div>
+          <div class="biz-card-name">교육사업</div>
+          <div class="biz-card-desc">방과후·자유학기제 교육 콘텐츠 및 프로그램 운영</div>
+        </div>
+
+        <!-- SI -->
+        <div class="biz-card si">
+          <div class="biz-card-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/>
+            </svg>
+          </div>
+          <div class="biz-card-name">SI</div>
+          <div class="biz-card-desc">시스템 통합 구축 및 IT 솔루션 컨설팅 서비스</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 회사 메시지 -->
+    <div class="about-messages">
+      <div class="about-msg-card">
+        <div class="msg-num">01</div>
+        <p>최고의 교육시스템 <strong>'가람소프트'</strong>의 최우선 목표입니다. 교육시스템의 이비즈니스를 수행하는 전문기업입니다.</p>
+      </div>
+      <div class="about-msg-card">
+        <div class="msg-num">02</div>
+        <p>가람소프트는 세계적인 교육시스템 전문기업으로 발전하여 항상 정직하고 발전적인 사고로 사회에 기여한다는 비전을 가지고 있습니다.</p>
+      </div>
+      <div class="about-msg-card" style="grid-column: 1 / -1;">
+        <div class="msg-num">03</div>
+        <p>가람소프트는 발전하는 교육사업과 이비지니스 산업에 발맞추어 항상 새로운 시스템 개발에 힘쓸 것이며, 넓은 기업이 되기 보다는 <strong>깊이 있는 기업</strong>이 될 것을 약속드립니다.</p>
+      </div>
+    </div>
+
+    <!-- 회사 정보 -->
+    <div class="about-info-section">
+      <h3>회사 정보</h3>
+      <table class="about-info-table">
+        <tr>
+          <th>상호</th>
+          <td>가람</td>
+        </tr>
+        <tr>
+          <th>대표자</th>
+          <td>김주영</td>
+        </tr>
+        <tr>
+          <th>사업자번호</th>
+          <td>122-09-87732</td>
+        </tr>
+        <tr>
+          <th>연락처</th>
+          <td>031-283-6249</td>
+        </tr>
+        <tr>
+          <th>FAX</th>
+          <td>031-601-8002</td>
+        </tr>
+        <tr>
+          <th>이메일</th>
+          <td>perch7250@gmail.com</td>
+        </tr>
+        <tr>
+          <th>주소</th>
+          <td>(17064) 경기도 용인시 기흥구 신갈로 51</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── FOOTER ── -->
+<div id="footer-placeholder"></div>
+<script src="./common.js"></script>
+
+</body>
+</html>
