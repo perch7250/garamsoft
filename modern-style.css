@@ -1,0 +1,549 @@
+/* =============================================
+   가람소프트 — Premium Design 2025
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1e293b;
+  background: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+
+/* ── Variables ── */
+:root {
+  --green:     #7a8c68;
+  --navy:      #166534;
+  --blue:      #0ea5e9;
+  --blue-dark: #0369a1;
+  --blue-light:#e0f2fe;
+  --slate:     #64748b;
+  --white:     #ffffff;
+  --surface:   #f8fafc;
+  --border:    #e2e8f0;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.05);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.07);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.10);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,.13);
+  --radius-sm: 8px;
+  --radius:    14px;
+  --radius-lg: 20px;
+  --ease:      cubic-bezier(.4,0,.2,1);
+  --max-w:     1080px;
+  --hh:        68px;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+#gs-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--hh);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.gs-header-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+#gs-logo img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+#gs-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+#gs-nav ul li a {
+  display: block;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--slate);
+  transition: background .18s var(--ease), color .18s var(--ease);
+  white-space: nowrap;
+}
+#gs-nav ul li a:hover { background: var(--blue-light); color: var(--blue-dark); }
+#gs-nav ul li.current a { background: var(--navy); color: #fff; }
+
+.gs-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  border: none;
+  background: none;
+}
+.gs-hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--navy); border-radius: 2px;
+  transition: transform .22s var(--ease), opacity .22s;
+}
+.gs-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.gs-hamburger.open span:nth-child(2) { opacity: 0; }
+.gs-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* =============================================
+   HOME — HERO
+   ============================================= */
+
+/* 전체 행: 이미지 바깥 양쪽을 단색으로 채움 */
+.gs-hero {
+  background: var(--green);
+}
+
+/* 이미지+텍스트를 카드와 같은 너비로 제한 */
+.gs-hero-inner {
+  position: relative;
+  overflow: hidden;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  height: 340px;
+}
+
+.gs-hero-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: .75;
+  display: block;
+}
+.gs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(15,23,42,.65) 0%,
+    rgba(3,105,161,.3) 100%);
+  pointer-events: none;
+}
+.gs-hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 48px;
+  color: #fff;
+}
+.gs-hero-text .tag {
+  display: inline-block;
+  background: rgba(14,165,233,.25);
+  border: 1px solid rgba(14,165,233,.5);
+  color: #7dd3fc;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  padding: 4px 12px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+}
+.gs-hero-text h1 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+.gs-hero-text p {
+  font-size: 15px;
+  opacity: .8;
+  font-weight: 300;
+}
+
+/* =============================================
+   HOME — SERVICE CARDS
+   ============================================= */
+.gs-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 64px 28px;
+}
+
+.gs-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+.gs-section-head h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+}
+.gs-section-head .sub { font-size: 13px; color: var(--slate); }
+
+
+.gs-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.gs-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+  cursor: pointer;
+}
+.gs-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.gs-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.gs-card-img {
+  width: 100%;
+  aspect-ratio: 1 / 0.9;
+  object-fit: cover;
+  transition: transform .4s var(--ease);
+}
+.gs-card:hover .gs-card-img { transform: scale(1.06); }
+
+.gs-card-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  transition: filter .25s var(--ease);
+}
+.gs-card-icon-wrap svg {
+  width: 52px;
+  height: 52px;
+  transition: transform .3s var(--ease);
+}
+.gs-card:hover .gs-card-icon-wrap svg { transform: scale(1.12); }
+
+.gs-card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.gs-card-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  color: var(--blue-dark);
+  background: var(--blue-light);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  align-self: flex-start;
+}
+.gs-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 2px;
+}
+.gs-card-desc {
+  font-size: 12.5px;
+  color: var(--slate);
+  line-height: 1.6;
+  flex: 1;
+}
+.gs-card-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  transition: gap .2s var(--ease);
+}
+.gs-card:hover .gs-card-link { gap: 8px; }
+.gs-card-link svg { width: 14px; height: 14px; }
+
+/* 원격지원 카드 */
+.gs-card.gs-card-remote { background: var(--green); border-color: transparent; }
+.gs-card.gs-card-remote .gs-card-title { color: #fff; }
+.gs-card.gs-card-remote .gs-card-desc  { color: #333; }
+.gs-card.gs-card-remote .gs-card-badge { background: rgba(14,165,233,.2); color: #7dd3fc; }
+.gs-card.gs-card-remote .gs-card-link  { color: #38bdf8; }
+
+/* =============================================
+   INNER PAGE — PAGE HERO
+   ============================================= */
+.gs-page-hero {
+  background: #7a8c68;
+  padding: 32px 10px ;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.gs-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 60%, rgba(14,165,233,.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(22,101,52,.5) 0%, transparent 50%);
+  pointer-events: none;
+}
+.gs-page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.gs-page-hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+.gs-page-hero h1 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.gs-page-hero p { font-size: 14px; color: #86efac; opacity: .85; }
+.gs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  font-size: 11.5px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 99px;
+  padding: 5px 14px;
+  display: inline-flex;
+  backdrop-filter: blur(8px);
+}
+.gs-breadcrumb a { color: #86efac; transition: color .15s; }
+.gs-breadcrumb a:hover { color: #4ade80; }
+.gs-breadcrumb span { color: rgba(255,255,255,.45); }
+
+.sc-title-banner {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 36%;
+  background: rgba(255,255,255,.04);
+  border-right: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.sc-title-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(74,222,128,.12) 0%, rgba(14,165,233,.08) 100%);
+  pointer-events: none;
+}
+.sc-title-banner::after {
+  content: '';
+  position: absolute;
+  right: -1px; top: 20%; bottom: 20%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(74,222,128,.4), transparent);
+}
+.gs-page-hero-content {
+  margin-left: 40%;
+  padding: 36px 36px 36px 40px;
+  position: relative;
+  z-index: 2;
+}
+.sc-title-banner .gs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: none;
+}
+.sc-title-banner .gs-hero-text {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px 32px;
+  color: #fff;
+}
+.sc-title-banner .gs-hero-text .tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: #4ade80;
+  background: rgba(74,222,128,.12);
+  border: 1px solid rgba(74,222,128,.3);
+  padding: 4px 12px;
+  border-radius: 99px;
+  display: inline-block;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+.sc-title-banner .gs-hero-text h1 {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.45;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+.sc-title-banner .gs-hero-text p {
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.6;
+}
+
+/* =============================================
+   INNER PAGE — CONTENT
+   ============================================= */
+.gs-page-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 28px 72px;
+}
+.gs-page-content img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+#gs-footer {
+  background: color-mix(in srgb, var(--navy) 80%, transparent);
+  color: #64748b;
+  padding: 52px 0 24px;
+}
+
+.gs-footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.gs-footer-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 56px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #1e293b;
+  margin-bottom: 24px;
+}
+
+.gs-footer-brand img {
+  height: 36px;
+  width: auto;
+  /*filter: brightness(0) invert(1);
+  opacity: .45;*/
+  margin-bottom: 14px;
+}
+.gs-footer-brand p { font-size: 12px; line-height: 1.8; color: #fff; }
+
+.gs-footer-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px 40px;
+  align-content: start;
+}
+.gs-footer-info-item {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+}
+.gs-footer-info-item .label { color: #fff; min-width: 72px; flex-shrink: 0; }
+.gs-footer-info-item .value { color: #fff; }
+
+.gs-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #334155;
+}
+
+/* =============================================
+   UTILITIES
+   ============================================= */
+#gs-main { min-height: calc(100vh - var(--hh) - 220px); }
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 860px) {
+  .gs-cards { grid-template-columns: repeat(2, 1fr); }
+  .gs-footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .gs-footer-info { grid-template-columns: 1fr; }
+  .gs-hero-text { padding: 0 36px; }
+  .gs-hero-text h1 { font-size: 26px; }
+}
+
+@media (max-width: 560px) {
+  :root { --hh: 58px; }
+
+  #gs-nav {
+    display: none;
+    position: fixed;
+    top: var(--hh);
+    left: 0; right: 0; bottom: 0;
+    background: #fff;
+    padding: 20px 16px;
+    overflow-y: auto;
+    z-index: 200;
+    box-shadow: var(--shadow-lg);
+  }
+  #gs-nav.open { display: flex; flex-direction: column; }
+  #gs-nav ul { flex-direction: column; width: 100%; gap: 4px; }
+  #gs-nav ul li { width: 100%; }
+  #gs-nav ul li a { padding: 14px 16px; font-size: 15px; }
+
+  .gs-hamburger { display: flex; }
+  .gs-cards { grid-template-columns: 1fr; }
+  /* 모바일: 히어로 이미지·배경 완전히 숨김 */
+  .gs-hero { display: none; }
+  .gs-hero-text { padding: 0 24px; }
+  .gs-hero-text h1 { font-size: 22px; }
+  .gs-page-hero h1 { font-size: 22px; }
+  .gs-section { padding: 44px 20px; }
+}
