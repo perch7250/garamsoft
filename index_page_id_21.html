@@ -33,33 +33,7 @@
 
 /* 3개 육각형 가로 배열 */
 
-.hex-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  margin-left:-66px;
-  margin-bottom: 30px;
-}
-.hex-row { display: flex; gap: 6px; } 
-.hex {
-  width: 130px;
-  height: 112px;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 600;
-  color: #2d3748;
-  cursor: pointer;
-  transition: filter 0.2s, transform 0.2s;
-  line-height: 1.4;
-  padding: 0 12px;
-}
-.hex:hover { filter: brightness(0.93); transform: scale(1.04); }
+.hex { width: 130px; height: 112px; padding: 0 12px; }
 .hex.color-green { background: #b5d9b0; }
 .hex.color-blue  { background: #b3dff0; }
 .hex.color-peach { background: #f5c8a0; }
