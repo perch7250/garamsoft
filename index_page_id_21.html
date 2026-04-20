@@ -32,12 +32,16 @@
 .sc-title h2 { font-size: 24px; font-weight: 700; color: #1a202c; }
 
 /* 3개 육각형 가로 배열 */
-.hex-container-row {
+
+.hex-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 6px;
-  margin-bottom: 64px;
+  margin-left:-66px;
+  margin-bottom: 30px;
 }
+.hex-row { display: flex; gap: 6px; } 
 .hex {
   width: 130px;
   height: 112px;
@@ -157,10 +161,12 @@
     </div>
 
     <!-- 육각형 메뉴 (3개 가로) -->
-    <div class="hex-container-row">
+    <div class="hex-container">
+    <div class="hex-row">
       <div class="hex color-green">지원명부<br/>작성</div>
       <div class="hex color-blue">관리자<br/>결재</div>
       <div class="hex color-peach">통계</div>
+    </div>
     </div>
 
     <!-- ① 지원명부 작성 -->

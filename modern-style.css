@@ -552,4 +552,13 @@ ul { list-style: none; }
   .gs-hero-text h1 { font-size: 22px; }
   .gs-page-hero h1 { font-size: 22px; }
   .gs-section { padding: 44px 20px; }
+  .sc-title-banner { display: none; }
+  .gs-page-hero-content { margin-left: 0; width: 100%; }
+
+
+  .sc-steps-flow { flex-direction: column; align-items: stretch; }
+  .sc-arrow { transform: rotate(90deg); }
+  .hex { width: 100%; height: 10em; font-size: 1.5em; }
+  .hex-row:nth-child(1) { margin-left: 0em; }
+  .hex-row:nth-child(2) { margin-left: 10em; }
 }
